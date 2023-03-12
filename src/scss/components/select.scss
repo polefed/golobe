@@ -1,0 +1,133 @@
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+// choice switch
+
+.choice {
+  max-width: 200px;
+  margin: 20px auto;
+  position: relative;
+
+  &__drop-switch {
+    display: none;
+    &:checked ~ .choice__drop-button {
+      background-color: coral;
+      color: white;
+      opacity: 1;
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: orange;
+        }
+      }
+    }
+    &:checked ~ .choice__drop-button:after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    &:checked ~ .choice__select {
+      top: calc(100% + 5px);
+    }
+    &:checked ~ .choice__select label {
+      position: relative;
+      z-index: 10;
+      opacity: 1;
+      visibility: visible;
+      max-height: 100vh;
+      padding: 10px;
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+    &:checked ~ .choice-overlay {
+      z-index: 9;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__drop-button {
+    display: block;
+    padding: 10px 30px 10px 10px;
+    color: transparent;
+    border-radius: 10px;
+    transition: opacity var(--transition-2), background-color var(--transition-2),
+      color var(--transition-2);
+    position: relative;
+    z-index: 10;
+    &:after {
+      position: absolute;
+      z-index: 10;
+      content: "";
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      background-color: white;
+      transition: transform var(--transition-2);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: orange;
+        color: white;
+      }
+    }
+  }
+
+  &__switch {
+    display: none;
+    &:nth-child(1):checked ~ .choice__select label:nth-child(1),
+    &:nth-child(2):checked ~ .choice__select label:nth-child(2),
+    &:nth-child(3):checked ~ .choice__select label:nth-child(3),
+    &:nth-child(4):checked ~ .choice__select label:nth-child(4),
+    &:nth-child(5):checked ~ .choice__select label:nth-child(5) {
+      cursor: default;
+      background-color: brown;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      opacity: 1;
+      visibility: visible;
+      max-height: 100vh;
+      padding: 10px;
+    }
+  }
+
+  &__select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top var(--transition-2);
+    label {
+      display: block;
+      border-radius: 10px;
+      background-color: gray;
+      color: white;
+      transition: var(--transition-2);
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: red;
+        }
+      }
+  
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+    }
+  }
+}
+
+.choice-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200vw;
+  height: 200vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-2), visibility var(--transition-2);
+  background-color: rgba(#000, 0.8);
+}

@@ -1,0 +1,48 @@
+// home
+.header-padding {
+  margin-bottom: 54px;
+}
+.home {
+  padding: 0 10px;
+  margin-top: 3rem;
+  &__container {
+    background: var(--background-2);
+    max-width: 1400px;
+    min-height: 560px;
+    padding: 0 10px 100px 10px;
+    overflow: hidden;
+    border-radius: 24px;
+
+    position: relative;
+    &:before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #12030362;
+    }
+  }
+  h1 {
+    // position: sticky;
+    // top: 10px;
+    position: relative;
+    z-index: 10;
+    display: grid;
+    text-align: center;
+    color: #fff;
+    span {
+      &:nth-child(1) {
+        font: 700 4.5rem / calc(57 / 45 * 100%) "TradeGothicLT";
+        margin-bottom: 4px;
+      }
+      &:nth-child(2) {
+        font: 700 8.8rem / calc(101 / 88 * 100%) "TradeGothicLT";
+        margin-bottom: 16px;
+      }
+      &:nth-child(3) {
+        font: 700 2.8rem / calc(24 / 28 * 100%) "TradeGothicLT";
+      }
+    }
+  }
+}

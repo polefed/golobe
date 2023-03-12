@@ -1,0 +1,86 @@
+
+.header {
+
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color var(--transition-1);
+
+  &__container {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    padding: 2.4rem 32px;
+    color: #fff;
+    font: var(--font-2);
+    @media (max-width: 480px) {
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+    }
+  }
+  &__links,
+  &__buttons {
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color var(--transition-1);
+      svg {
+        path {
+          transition: fill var(--transition-1);
+        }
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          color: var(--color-15);
+          path {
+            fill: var(--color-15);
+          }
+          background-size: 100% auto, auto;
+        }
+      }
+    }
+  }
+  &__logo {}
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    button {
+      &:nth-child(1) {
+        transition: color var(--transition-1);
+        @media (any-hover: hover) {
+        &:hover {
+        color: var(--color-15);
+        }
+        }
+      }
+      &:nth-child(2) {
+        padding: 1.6rem 2.4rem;
+        border-radius: 8px;
+        background-color: #fff;
+        color: #000;
+        transition: background-color var(--transition-1), color var(--transition-1);
+        @media (any-hover: hover) {
+        &:hover {
+        background-color: var(--color-15);
+        color: #fff;
+        }
+        }
+      }
+    }
+  }
+}

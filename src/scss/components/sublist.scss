@@ -1,0 +1,100 @@
+
+// sublist switch
+
+.item-drop-down {
+  transition: color var(--transition-2);
+  position: relative;
+  @media (any-hover: hover) {
+    padding: 5px 0;
+    &:hover .navigation__link {
+      color: brown;
+    }
+    &:hover .sublist {
+      opacity: 1;
+      visibility: visible;
+      max-height: 100vh;
+    }
+    &:hover .sublist .sublist__item {
+      left: 0;
+    }
+  }
+}
+#sublistSwitch {
+  display: none;
+  @media (any-hover: none) {
+    &:checked ~ .sublist {
+      opacity: 1;
+      max-height: 100vh;
+    }
+    &:checked ~ .sublist {
+      transform: translateX(0);
+    }
+    &:checked ~ .button-drop-down {
+      color: brown;
+    }
+    &:checked ~ .button-drop-down .button-drop-down-arrow {
+      background-color: brown;
+    }
+  }
+}
+.button-drop-down {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  transition: color var(--transition-2);
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+  }
+}
+.button-drop-down-arrow {
+  display: none;
+  width: 8px;
+  height: 8px;
+  background-color: gray;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  transition: border-top var(--transition-2);
+  @media (any-hover: none) {
+    display: block;
+  }
+}
+
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+// sublist
+
+.sublist {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  min-width: 100px;
+  transition: max-height var(--transition-2), opacity var(--transition-2),
+    transform var(--transition-2);
+  opacity: 0;
+  max-height: 0;
+  @media (max-width: 768px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+  }
+  &__item {
+  }
+  &__link {
+    @media (any-hover: hover) {
+      &:hover {
+        color: brown;
+      }
+    }
+    @media (max-width: 768px) {
+      padding: 20px 10px 20px 30px;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+}

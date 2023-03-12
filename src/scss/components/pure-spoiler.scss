@@ -1,0 +1,79 @@
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+// pure spoiler
+.pure-spoiler {
+  overflow: hidden;
+  @media (max-width: 1200px) {
+    flex: 1 1 auto;
+  }
+  &__switch {
+    display: none;
+    @media (max-width: 1200px) {
+      &:checked ~ .pure-spoiler__button {
+        background-color: var(--color-15);
+      }
+      &:checked ~ .pure-spoiler__button:after {
+        transform: translateY(-50%) rotate(45deg);
+      }
+      &:checked ~ .pure-spoiler__content {
+        transform: translateX(0);
+        opacity: 1;
+        max-height: 100vh;
+      }
+    }
+  }
+  &__button {
+    font: var(--font-4);
+    color: var(--color-4);
+    display: block;
+    cursor: default;
+    margin-bottom: 16px;
+    @media (max-width: 1200px) {
+      background-color: white;
+      color: black;
+      border-radius: 10px;
+      padding: 10px 30px 10px 10px;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        background-color: black;
+        clip-path: var(--cross-5);
+        width: 10px;
+        height: 10px;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform var(--transition-2);
+      }
+    }
+  }
+  &__content {
+    display: grid;
+    gap: 12px;
+    @media (max-width: 1200px) {
+      transition: var(--transition-2);
+      transform: translateX(-100%);
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+  &__content-item {
+  }
+  &__content-link {
+    @media (any-hover: hover) {
+      background-image: linear-gradient(#fff, #fff);
+    background-size: 0 2px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: background-size var(--transition-1),
+    color var(--transition-1);
+    @media (any-hover: hover) {
+    &:hover {
+      background-size: 100% 2px, auto;
+      color: #fff;
+    }
+    }
+  }
+  }
+}

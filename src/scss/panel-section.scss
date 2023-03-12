@@ -1,0 +1,63 @@
+// panel section
+.panel-section {
+  padding: 0 20px;
+  position: relative;
+  top: -100px;
+  &__container {
+    background: #fff;
+    box-shadow: 0px 4px 16px rgba(141, 211, 186, 0.383);
+    border-radius: 16px;
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  &__links {
+    flex-direction: row;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  &__buttons-button {
+    flex: 1 1 auto;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    height: 56px;
+    transition: opacity var(--transition-1);
+    @media (any-hover: hover) {
+    &:hover {
+    opacity: 0.5;
+    }
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 8px 16px;
+
+    position: relative;
+  }
+  &__buttons-label {
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    background-color: #fff;
+    padding: 4px;
+  }
+  &__buttons-text {}
+  &__bottom-links {
+    align-self: flex-end;
+    a {
+      &:nth-child(1) {
+        background-color: transparent;
+      }
+    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}

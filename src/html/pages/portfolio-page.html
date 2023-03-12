@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Описание страницы сайта." />
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Портфолио</title>
+  </head>
+<body>
+  <div class="progress-on-scroll"></div>
+  @@include('./html/components/scroll-up.html')
+  @@include('./html/header.html')
+  <div class="header-padding"></div>
+  <div class="section">
+    @@include('./html/components/list-column-image-text.html')
+  </div>
+
+  <section class="section">
+    <p class="title-1">News</p>
+    <div class="section__container container">
+      @@include('./html/components/news.html')
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="section__container container">
+      <p class="reviews__title title-2">Отзывы</p>
+      @@include('./html/components/reviews.html')
+    </div>
+  </div>
+  @@include('./html/footer.html')
+  @@include('./html/components/copyright.html')
+</body>
+</html>

@@ -1,0 +1,253 @@
+
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+  cursor: grab;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  margin: 0;
+  &:active {
+    background-color: red;
+  }
+  &:after {
+    font-size: 0;
+  }
+}
+.swiper-button-disabled {
+}
+
+.swiper-pagination-bullet {
+  background-color: gray;
+  transition: background-color var(--transition-1);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: red;
+    }
+  }
+  &:active {
+    background-color: red;
+  }
+}
+.swiper-pagination-bullet-active {
+  background-color: brown;
+  transition: background-color var(--transition-1);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: brown;
+      cursor: default;
+    }
+  }
+}
+
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+.main-slider {
+  position: relative;
+  max-width: 500px;
+  margin: 30px auto;
+  @media (min-width: 769px) {
+    height: 300px;
+  }
+  &__swiper {
+    height: 100%;
+  }
+  &__slide {
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__slide-img {
+    width: 100%;
+    height: 300px;
+    @media (min-width: 769px) {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__slide-information {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    @media (min-width: 769px) {
+      overflow: hidden;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        background-color: gray;
+        border-radius: 10px;
+        width: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: brown;
+        border-radius: 10px;
+        transition: background-color var(--transition-1);
+        @media (any-hover: hover) {
+          &:hover {
+            background-color: red;
+          }
+        }
+      }
+    }
+  }
+  &__slide-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  &__slide-text {
+    font-size: 15px;
+  }
+  &__arrow-prev,
+  &__arrow-next {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+    // top: 50%;
+    // transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color var(--transition-1);
+    @media (max-width: 768px) {
+      transform: translateY(0);
+      top: 150px;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: red;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  &__arrow-prev {
+    right: 70px;
+    // left: 10px;
+    &:before {
+      clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    }
+  }
+  &__arrow-next {
+    // right: 10px;
+    &:before {
+      clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    }
+  }
+  &__pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    counter-reset: sliderCounter;
+    @media (min-width: 769px) {
+      position: absolute;
+      z-index: 1;
+      left: 25px;
+      bottom: 25px;
+    }
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+    .swiper-pagination-bullet {
+      opacity: 1;
+      flex: 0 0 30px;
+      height: 30px;
+      transition: background-color var(--transition-1);
+      counter-increment: sliderCounter;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "0" counter(sliderCounter);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+      &:nth-child(n + 10)::before {
+        content: counter(sliderCounter);
+      }
+    }
+    .swiper-pagination-bullet-active {
+    }
+  }
+}
+
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+.slider-toggle {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--transition-2);
+  &__stop,
+  &__play {
+    width: 100%;
+    height: 100%;
+    &:checked {
+      display: none;
+    }
+    transition: background-color var(--transition-2);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: red;
+      }
+    }
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      width: 10px;
+      height: 10px;
+      transition: var(--transition-2);
+    }
+  }
+  &__stop {
+    background-color: gray;
+    &:checked ~ .slider-toggle__play {
+      display: block;
+    }
+  }
+  &__play {
+    background-color: brown;
+    display: none;
+    &:before {
+      clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    }
+  }
+}

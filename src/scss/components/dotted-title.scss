@@ -1,0 +1,18 @@
+.dotted-title {
+  display: inline-flex;
+  gap: 50px;
+  font-size: 20px;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    border-bottom: 2px dotted brown;
+  }
+  &__text,
+  &__number {
+    background-color: white;
+    z-index: 1;
+  }
+}

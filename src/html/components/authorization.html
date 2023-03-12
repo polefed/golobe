@@ -1,0 +1,88 @@
+<input class="toggle" id="userSwitch" type="checkbox">
+<label class="user-button hover-underline-2" data-toggle=".authorization" for="userSwitch">
+  <span class="user-button__image responsive-1">
+    <img src="img/1x1.png" loading="lazy" alt="image">
+  </span>
+  <span class="user-button__text">Пользователь</span>
+</label>
+<label class="user-overlay toggle-overlay" for="userSwitch"></label>
+<div class="authorization">
+  <input id="filterLogin" class="authorization__switch" name="loginRegistration" type="radio" checked>
+  <input id="filterRegistration" class="authorization__switch" name="loginRegistration" type="radio">
+  <input id="authorizationReturnSwitch" class="authorization__return-switch" type="checkbox">
+  <input id="rememberPasswordSwitch" class="authorization__remember-switch" type="checkbox" checked>
+  <div class="authorization__navigation">
+    <label class="authorization__navigation-button authorization__navigation-button-1"
+      for="filterLogin">Вход</label>
+    <label class="authorization__navigation-button authorization__navigation-button-2"
+      for="filterRegistration">Регистрация</label>
+  </div>
+  <div class="authorization__content">
+    <div class="authorization__content-item authorization-login">
+      <form class="authorization-form">
+        <label class="authorization-form__label">Логин</label>
+        <input class="authorization-form__input" type="text">
+        <label class="authorization-form__label">Пароль</label>
+        <input class="authorization-form__input" type="password">
+        <label class="authorization-form__confirm">
+          <input class="authorization-form__confirm-checkbox" type="checkbox" checked>
+          <span class="authorization-form__confirm-text">Запомнить меня на этом компьютере</span>
+        </label>
+        <button class="authorization-form__submit" type="submit">Авторизоваться</button>
+      </form>
+    </div>
+    <div class="authorization__content-item authorization-registration">
+      <form class="authorization-form">
+        <label class="authorization-form__label">Логин
+          <span class="authorization-form__label-symbol">*</span>
+        </label>
+        <input class="authorization-form__input" type="text" required>
+        <label class="authorization-form__label">Пароль
+          <span class="authorization-form__label-symbol">*</span>
+        </label>
+        <input class="authorization-form__input" type="password" required>
+        <label class="authorization-form__label">Подтверждение пароля
+          <span class="authorization-form__label-symbol">*</span>
+        </label>
+        <input class="authorization-form__input" type="password" required>
+        <label class="authorization-form__label">Адрес e-mail
+          <span class="authorization-form__label-symbol">*</span>
+        </label>
+        <input class="authorization-form__input" type="email" required>
+        <label class="authorization-form__label">Имя</label>
+        <input class="authorization-form__input" type="text">
+        <label class="authorization-form__label">Фамилия</label>
+        <input class="authorization-form__input" type="text">
+        <label class="authorization-form__confirm">
+          <input class="authorization-form__confirm-checkbox" type="checkbox" checked>
+          <span class="authorization-form__confirm-text">Запомнить меня на этом компьютере</span>
+        </label>
+        <label class="authorization-form__confirm">
+          <input class="authorization-form__confirm-checkbox" type="checkbox" checked>
+          <span class="authorization-form__confirm-text">
+            Я хочу учавствовать в бесплатной программе лояльности и получать баллы, информацию о скидках и акциях
+          </span>
+        </label>
+        <button class="authorization-form__submit" type="submit">Регистрация</button>
+      </form>
+    </div>
+  </div>
+  <div class="authorization__remember">
+    <p class="authorization__remember-text">
+      Если вы забыли пароль, введите логин или E-Mail. Контрольная строка для смены пароля, а также ваши
+      регистрационные данные, будут высланы вам по E-Mail.
+    </p>
+    <form class="authorization-form">
+      <p class="authorization__remember-title">
+        Выслать контрольную строку
+      </p>
+      <label class="authorization-form__label">Логин</label>
+      <input class="authorization-form__input" type="text">
+      <label class="authorization-form__label">Пароль</label>
+      <input class="authorization-form__input" type="password">
+      <button class="authorization-form__submit" type="submit">Выслать</button>
+    </form>
+  </div>
+  <label class="authorization__remember-button" for="rememberPasswordSwitch">Забыли пароль?</label>
+  <label class="authorization__return-button" for="rememberPasswordSwitch">Авторизация</label>
+</div>

@@ -1,0 +1,101 @@
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+// ===================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+// variables
+
+:root {
+
+  //        Light                    300    
+  //        Regular (Normal)         400    
+  //        Medium                   500    
+  //        Semi-bold                600    
+  //        Bold                     700    
+  //        Extra-bold               800    
+  //        Black                    900    
+
+  // font
+  --font-1: 500 14px / calc(17 / 14 * 100%) "Montserrat";
+  --font-2: 600 14px / calc(17 / 14 * 100%) "Montserrat";
+  --font-3: 400 14px / calc(20 / 14 * 100%) "Montserrat";
+  --font-4: 700 16px / 100% "TradeGothicLT";
+  --font-5: 500 16px / calc(20 / 16 * 100%) "Montserrat";
+  --font-6: 400 16px / calc(20 / 16 * 100%) "Montserrat";
+  --font-7: 600 16px / calc(20 / 16 * 100%) "Montserrat";
+  --font-8: 500 12px / calc(15 / 12 * 100%) "Montserrat";
+  --font-9: 600 20px / calc(24 / 20 * 100%) "Montserrat";
+  --font-10: 600 24px / calc(29 / 24 * 100%) "Montserrat";
+  --font-11: 700 20px / calc(25 / 20 * 100%) "TradeGothicLT";
+
+  --font-12: 600 12px / calc(15 / 12 * 100%) "Montserrat";
+  --font-13: 700 4.4rem / calc(54 / 44 * 100%) "TradeGothicLT";
+  --font-14: 700 24px / calc(30 / 24 * 100%) "TradeGothicLT";
+  --font-15: 600 32px / calc(39 / 32 * 100%) "Montserrat";
+  --font-16: 700 40px / 100% "Montserrat";
+  --font-17: 500 20px / calc(24 / 20 * 100%) "Montserrat";
+  --font-18: 700 32px / 100% "TradeGothicLT";
+  --font-19: 400 12px / calc(15 / 12 * 100%) "Montserrat";
+
+  // transition
+  --transition-1: 0.3s;
+  --transition-2: 0.5s;
+
+  // background
+  --background-1: center/cover no-repeat;
+  --background-2: center/cover fixed;
+  --background-3: right 5px top 50%/2rem no-repeat;
+
+  --spoilerMedia: 992px;
+
+  // color
+  --color-1: #8DD3BB;
+  --color-2: #FFFFFF;
+  --color-3: #112211;
+  --color-4: #000000;
+  --color-5: #FF8682;
+  --color-6: #1C1B1F;
+  --color-7: #79747E;
+  --color-8: #D7E2EE;
+  --color-9: #A4806D;
+  --color-10: #EBF6F2;
+
+  --color-11: #4C4850;
+  --color-12: #FFC107;
+  --color-13: #DFAD92;
+  --color-14: #7C9C9F;
+  --color-15: #65B599;
+  --color-16: #546869;
+  --color-17: #CDEAE1;
+  --color-18: #FAFBFC;
+  --color-19: #D9D9D9;
+  --color-20: #FF3D00;
+
+  --color-21: #4CAF50;
+  --color-22: #1976D2;
+  --color-23: #FAFAFA;
+
+  // clip path
+  --triangle: polygon(0 0, 50% 100%, 100% 0);
+  --cross-5: polygon(0 45%, 45% 45%, 45% 0, 55% 0, 55% 45%, 100% 45%, 100% 55%, 55% 55%, 55% 100%, 45% 100%, 45% 55%, 0 55%);
+
+  // cross
+  --cross: linear-gradient(45deg, var(--cross-color-2) 45%, var(--cross-color-1) 46%, var(--cross-color-1) 55%, var(--cross-color-2) 56%),
+          linear-gradient(-45deg, var(--cross-color-2) 45%, var(--cross-color-1) 46%, var(--cross-color-1) 55%, var(--cross-color-2) 56%);
+  --cross-color-1: brown;
+  --cross-color-2: transparent;
+
+   // plus
+  --plus: linear-gradient(0deg, var(--plus-color-2) 45%, var(--plus-color-1) 46%, 
+                                  var(--plus-color-1) 55%, var(--plus-color-2) 56%),
+          linear-gradient(90deg, var(--plus-color-2) 45%, var(--plus-color-1) 46%,
+                                  var(--plus-color-1) 55%, var(--plus-color-2) 56%);
+  --plus-color-1: gold;
+  --plus-color-2: transparent;
+
+  // minus
+  --minus: linear-gradient(0deg, var(--minus-color-2) 45%, var(--minus-color-1) 46%, var(--minus-color-1) 55%, var(--minus-color-2) 56%);
+  --minus-color-1: gold;
+  --minus-color-2: transparent;
+
+}
+
+// :root.dark-theme {}

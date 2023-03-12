@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Описание страницы сайта." />
+  <link rel="icon" href="data:;base64,=">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Контакты</title>
+</head>
+
+<body>
+  <div class="progress-on-scroll"></div>
+  @@include('./html/components/scroll-up.html')
+  @@include('./html/header.html')
+  <div class="header-padding"></div>
+
+  <div class="map">
+    <div style="position:relative;overflow:hidden;"><a
+        href="https://yandex.ru/maps/47/nizhny-novgorod/?utm_medium=mapframe&utm_source=maps"
+        style="color:#eee;font-size:12px;position:absolute;top:0px;">Нижний Новгород</a><a
+        href="https://yandex.ru/maps/47/nizhny-novgorod/?ll=43.999597%2C56.315959&utm_medium=mapframe&utm_source=maps&z=13.89"
+        style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс.Карты — транспорт, навигация, поиск
+        мест</a><iframe src="https://yandex.ru/map-widget/v1/-/CCU5EOWwPB" width="560" height="400" frameborder="1"
+        allowfullscreen="true" style="position:relative;"></iframe></div>
+  </div>
+
+  @@include('./html/components/main-form.html')
+
+
+  <script src="js/app.min.js" defer></script>
+</body>
+
+</html>
