@@ -12,6 +12,7 @@
     height: 56px;
     padding: 16px;
     border-radius: 4px;
+    outline: 2px solid transparent;
     transition: outline var(--transition-1);
     &::placeholder {
       transition: color var(--transition-1), transform var(--transition-1);

@@ -3,11 +3,11 @@
 
 // reviews
 
-.reviews {
+.reviews-section {
   &__container {
-  }
-  &__title {
-    margin-bottom: 4rem;
+    @media (max-width: 1366px) {
+      padding: 0 25px;
+    }
   }
 }
 
