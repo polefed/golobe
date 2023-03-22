@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Описание страницы сайта." />
-  <link rel="icon" href="data:;base64,=">
-  <link rel="stylesheet" href="css/style.min.css?_v=20230314181146">
+  <meta name="description" content="Описание страницы сайта.">
+  <!-- <link rel="icon" href="data:;base64,="> -->
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TradeGothicLT-Extended.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.min.css?_v=20230322150056">
   <title>Main Page</title>
+  <script src="js/app.min.js?_v=20230322150056" defer></script>
 </head>
 <body>
 
@@ -304,7 +310,7 @@
 
     <div class="more" style="background-image: url('img/flights.jpg');">
       <div class="more__info">
-        <p class="more__title">Flights</p>
+        <h3 class="more__title">Flights</h3>
         <p class="more__text">
           Search Flights & Places Hire to our most popular destinations
         </p>
@@ -319,7 +325,7 @@
 
     <div class="more" style="background-image: url('img/hotels.jpg');">
       <div class="more__info">
-        <p class="more__title">Hotels</p>
+        <h3 class="more__title">Hotels</h3>
         <p class="more__text">
           Search hotels & Places Hire to our most popular destinations
         </p>
@@ -629,8 +635,6 @@
     </div>
   </div>
 </footer>
-
-  <script src="js/app.min.js?_v=20230314181146" defer></script>
 
 </body>
 </html>
