@@ -1,9 +1,10 @@
 import fileInclude from "gulp-file-include";
 import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
-// import htmlmin from "gulp-htmlmin";
+import htmlmin from "gulp-htmlmin";
 // import pug from "gulp-pug";
-// import typograf from "gulp-typograf";
+import typograf from "gulp-typograf";
+import size from "gulp-size";
 
 
 export const html = () => {
@@ -22,10 +23,19 @@ export const html = () => {
     //   verbose: true
     // }))
     .pipe(fileInclude())
-    // .pipe(htmlmin({
-    //   collapseWhitespace: true
-    // }))
+
+    .pipe(typograf({
+      locale: ['ru', 'en-US']
+    }))
+
+    .pipe(size({ title: "До сжатия" }))
+
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+
     // .pipe(app.plugins.replace(/@img\//g, 'img/'))
+    
     .pipe(
       app.plugins.if(
         app.isBuild,
@@ -51,9 +61,9 @@ export const html = () => {
         })
       )
     )
-    // .pipe(typograf({
-    //   locale: ['ru', 'en-US']
-    // }))
+
+    .pipe(size({ title: "После сжатия" }))
+
     .pipe(app.gulp.dest(app.path.build.html))
     .pipe(app.plugins.browsersync.stream());
 }

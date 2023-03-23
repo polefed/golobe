@@ -32,6 +32,7 @@
     "gulp-replace": "latest",
     "gulp-sass": "latest",
     "gulp-shorthand": "latest",
+    "gulp-size": "^4.0.1",
     "gulp-svg-sprite": "latest",
     "gulp-ttf2woff2": "latest",
     "gulp-typograf": "^4.0.3",
