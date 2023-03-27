@@ -1,7 +1,7 @@
 import fileInclude from "gulp-file-include";
 import webpHtmlNosvg from "gulp-webp-html-nosvg";
 import versionNumber from "gulp-version-number";
-import htmlmin from "gulp-htmlmin";
+// import htmlmin from "gulp-htmlmin";
 // import pug from "gulp-pug";
 import typograf from "gulp-typograf";
 import size from "gulp-size";
@@ -30,9 +30,9 @@ export const html = () => {
 
     .pipe(size({ title: "До сжатия" }))
 
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
+    // .pipe(htmlmin({
+    //   collapseWhitespace: true
+    // }))
 
     // .pipe(app.plugins.replace(/@img\//g, 'img/'))
     
